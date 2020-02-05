@@ -1,0 +1,25 @@
+{
+  "name": "myra",
+  "version": "1.0.0",
+  "description": "Myra is an integration of slack and Jira to get finished activities from Jira board to a slack channel.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuvaraj-anbarasan/myra.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuvaraj-anbarasan/myra/issues"
+  },
+  "homepage": "https://github.com/yuvaraj-anbarasan/myra#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
+    "node-cron": "^2.0.3"
+  }
+}
