@@ -4,7 +4,8 @@
   "description": "Myra is an integration of slack and Jira to get finished activities from Jira board to a slack channel.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/server.js",
+    "test": ""
   },
   "repository": {
     "type": "git",
