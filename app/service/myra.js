@@ -1,6 +1,20 @@
 const axios = require( 'axios' ).default;
 
 class Myra {
+    static getMyIssues( ) {
+        let inProgress, done;
+        try {
+            inProgress = await this.getInProgressIssues( );
+
+            done = await this.getDoneIssues( );
+
+            return { inProgress, done };
+        } catch( err ) {
+            console.log( '[Atlassian Error]:', err );
+            return { inProgress, done };
+        }
+    }
+
     static getInProgressIssues( ) {
         return new Promise( ( resolve, reject ) => {
             let toDo = [ ];
