@@ -1,7 +1,7 @@
 const axios = require( 'axios' ).default;
 
 class Myra {
-    static getMyIssues( ) {
+    static async getMyIssues( ) {
         let inProgress, done;
         try {
             inProgress = await this.getInProgressIssues( );
@@ -20,7 +20,7 @@ class Myra {
             let toDo = [ ];
 
             axios.get( 
-                'https://yuvaraj-anbarasan.atlassian.net/rest/api/2/search?jql=assignee="Yuvaraj Anbarasan" and status="To Do"', 
+                'https://yuvaraj-anbarasan.atlassian.net/rest/api/2/search?jql=assignee="Yuvaraj Anbarasan" and status="In Progress"', 
                 {
                     headers: {
                         Authorization: "Basic eXV2YXJhai5rbGVpQGdtYWlsLmNvbTpXa05hRVdMQ1JnZWhMVjFlTkphcjU3OUU="
