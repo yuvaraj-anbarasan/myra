@@ -3,6 +3,7 @@ const axios = require( 'axios' ).default;
 class Myra {
     static async getMyIssues( ) {
         let inProgress, done;
+        
         try {
             inProgress = await this.getInProgressIssues( );
 
