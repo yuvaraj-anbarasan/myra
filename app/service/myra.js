@@ -9,16 +9,17 @@ class Myra {
 
             done = await this.getDoneIssues( );
 
-            return { inProgress, done };
+                let message = 'In progress:' + inProgress + '\n' + 'Done:' + done;
+            return { message };
         } catch( err ) {
             console.log( '[Atlassian Error]:', err );
-            return { inProgress, done };
+            return null;
         }
     }
 
     static getInProgressIssues( ) {
         return new Promise( ( resolve, reject ) => {
-            let toDo = [ ];
+            let toDo = '';
 
             axios.get( 
                 'https://yuvaraj-anbarasan.atlassian.net/rest/api/2/search?jql=assignee="Yuvaraj Anbarasan" and status="In Progress"', 
@@ -30,7 +31,7 @@ class Myra {
             )
             .then( response => {
                 response.data.issues.map( issue => {
-                    toDo.push( issue.fields.summary );
+                    toDo = '\n' + issue.fields.summary;
                 });
 
                 resolve( toDo );
@@ -54,7 +55,7 @@ class Myra {
             )
             .then( response => {
                 response.data.issues.map( issue => {
-                    done.push( issue.fields.summary );
+                    done = '\n' + issue.fields.summary;
                 });
 
                 resolve( done );

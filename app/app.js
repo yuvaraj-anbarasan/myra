@@ -5,9 +5,9 @@ const MyraService = require( './service/myra' );
 const app = express( );
 
 const task = cron.schedule( '* 08 11 * * *', async ( ) => {
-   const { inProgress, done } = await MyraService.getMyIssues( );
+   const { message } = await MyraService.getMyIssues( );
 
-   console.log( 'in progress:' );
+   console.log( message );
 
    taskKill( );
 }); 
