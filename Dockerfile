@@ -2,12 +2,12 @@ FROM node:current-slim
 
 WORKDIR /myra/
 
-COPY package.json
+COPY package.json .
 
 RUN npm install
 
 EXPOSE 3000
 
-COPY . . 
+COPY . .
 
-CMD [ "npm", "dev" ]
+CMD [ "node", "./bin/server.js" ]
