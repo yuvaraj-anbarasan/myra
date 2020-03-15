@@ -1,2 +1,4 @@
 app:
   port: 3000
+jira:
+  token: eXV2YXJhai5rbGVpQGdtYWlsLmNvbTpXa05hRVdMQ1JnZWhMVjFlTkphcjU3OUU=
